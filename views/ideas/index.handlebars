@@ -3,14 +3,21 @@
 <div class="row justify-content-md-center mb-5">
   <div class="col-8 ">
     <div class="card shadow-sm">
-      <div class="card-header bg-info text-light"> <h4>{{title}}</h4> </div>
+      <div class="card-header bg-info text-light"> 
+        <h4>{{title}}</h4> 
+      </div>
       <div class="card-body bg-light"> <p>{{details}}</p> 
         <div class="row">
           <div class="col-6">
             <a class="btn alert alert-primary btn-block mb-0 bg-light" href="/ideas/edit/{{id}}">Edit</a>
           </div>
+
+
           <div class="col-6">
-            <a class="btn alert alert-danger btn-block mb-0 bg-light" href="/ideas/edit/{{id}}">Delete</a>
+            <form action="/ideas/{{id}}?_method=DELETE" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" class="btn alert alert-danger btn-block mb-0 bg-light" value="DELETE">
+             </form> 
           </div>
         </div>
       </div>
